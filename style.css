@@ -7,4 +7,14 @@
 body {
   background-color: rgb(223, 223, 223);
   max-height: 100vh;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  background-color: black;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  /* aspect-ratio: 16/9; */
 }
