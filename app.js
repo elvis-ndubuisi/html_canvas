@@ -51,7 +51,14 @@ class FlowFieldEffect {
   }
 
   #drawLine(x, y, angle) {
-    const length = 15;
+    let positionX = x;
+    let positionY = y;
+    let dx = mouse.x - positionX;
+    let dy = mouse.y - positionY;
+    let distance = dx * dx + dy * dy;
+    if (distance > 500000) distance = 500000;
+    else if (distance < 100000) distance = 100000;
+    let length = distance / 10000;
     this.#ctx.beginPath();
     this.#ctx.moveTo(x, y);
     this.#ctx.lineTo(
